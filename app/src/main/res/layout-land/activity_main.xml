@@ -66,4 +66,15 @@
         app:layout_constraintStart_toStartOf="@+id/helloWorldTextView"
         app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:text="@string/radiobutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.493" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

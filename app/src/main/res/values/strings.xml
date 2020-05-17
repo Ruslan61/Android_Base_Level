@@ -5,4 +5,6 @@
     <string name="button">Button</string>
     <string name="switch_text">Switch</string>
     <string name="name">Name</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="radiobutton">RadioButton</string>
 </resources>
