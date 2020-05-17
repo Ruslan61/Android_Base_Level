@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">A1L1_HelloWorld</string>
+    <string name="hello_first_lesson">Hello this is first lesson on GeekBrains!</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="button">Button</string>
+    <string name="switch_text">Switch</string>
+    <string name="name">Name</string>
+</resources>
