@@ -9,4 +9,5 @@
     <string name="city_vladivostok">Vladivostok</string>
     <string name="wind_speed">Wind speed</string>
     <string name="pressure">Pressure</string>
+    <string name="changed_city">Changed city</string>
 </resources>
