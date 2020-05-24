@@ -1,22 +1,29 @@
 package com.geekbrains.a1l1_helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "myLogs";
+    private Button select;
+    private CheckBox windCheckBox;
+    private CheckBox pressureCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initViews();
+        selectOnClick();
+        windCheckBoxOnClick();
+        pressureCheckBoxOnClick();
     }
 
     @Override
@@ -55,6 +62,37 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
     }
 
+    private void initViews() {
+        select = findViewById(R.id.select);
+        windCheckBox = findViewById(R.id.windCheckBox);
+        pressureCheckBox = findViewById(R.id.pressureCheckBox);
+    }
 
+    private void selectOnClick() {
+        select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Button Select on click");
+            }
+        });
+    }
+
+    private void windCheckBoxOnClick() {
+        windCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Wind checkBox on click");
+            }
+        });
+    }
+
+    private void pressureCheckBoxOnClick() {
+        pressureCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Pressure checkBox on click");
+            }
+        });
+    }
 
 }
