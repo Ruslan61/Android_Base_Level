@@ -1,38 +1,121 @@
 package com.geekbrains.a1l1_helloworld;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView helloWorldTextView;
-    private Button button;
+
+    private static final String TAG = "myLogs";
+    private Button select;
+    private CheckBox windCheckBox;
+    private CheckBox pressureCheckBox;
+    private TextView textTemperature;
+    private final String actualTemperatureKey = "actualTemperatureKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
-        setOnButtonClickListener();
+        initViews();
+        selectOnClick();
+        windCheckBoxOnClick();
+        pressureCheckBoxOnClick();
     }
 
-    private void initView(){
-        helloWorldTextView = findViewById(R.id.helloWorldTextView);
-        button = findViewById(R.id.button);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "method onStart started");
     }
 
-    private void setOnButtonClickListener(){
-        button.setOnClickListener(new View.OnClickListener() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "method onResume started");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "method onPause started");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "method onStop started");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "method onRestart started");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        String text = textTemperature.getText().toString();
+        outState.putString(actualTemperatureKey, text);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String text = savedInstanceState.getString(actualTemperatureKey);
+        textTemperature.setText(text);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "method onDestroy started");
+    }
+
+    private void initViews() {
+        select = findViewById(R.id.select);
+        windCheckBox = findViewById(R.id.windCheckBox);
+        pressureCheckBox = findViewById(R.id.pressureCheckBox);
+        textTemperature = findViewById(R.id.actualTemperature);
+    }
+
+    private void selectOnClick() {
+        select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = getString(R.string.hello_first_lesson);
-                int color = ContextCompat.getColor(getBaseContext(), R.color.colorPrimaryDark);
-                helloWorldTextView.setText(text);
-                helloWorldTextView.setTextColor(color);
+                Log.d(TAG, "Button Select on click");
+            }
+        });
+    }
+
+    private void windCheckBoxOnClick() {
+        windCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Wind checkBox on click");
+            }
+        });
+    }
+
+    private void pressureCheckBoxOnClick() {
+        pressureCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Pressure checkBox on click");
             }
         });
     }
