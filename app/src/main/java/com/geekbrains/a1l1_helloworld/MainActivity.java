@@ -1,5 +1,6 @@
 package com.geekbrains.a1l1_helloworld;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private Button select;
     private CheckBox windCheckBox;
     private CheckBox pressureCheckBox;
+    private TextView textTemperature;
+    private final String actualTemperatureKey = "actualTemperatureKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        String text = textTemperature.getText().toString();
+        outState.putString(actualTemperatureKey, text);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String text = savedInstanceState.getString(actualTemperatureKey);
+        textTemperature.setText(text);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
@@ -72,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         select = findViewById(R.id.select);
         windCheckBox = findViewById(R.id.windCheckBox);
         pressureCheckBox = findViewById(R.id.pressureCheckBox);
+        textTemperature = findViewById(R.id.actualTemperature);
     }
 
     private void selectOnClick() {
