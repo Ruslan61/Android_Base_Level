@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/chooseACityButton"
         app:srcCompat="?android:attr/textSelectHandle" />
 
     <EditText
@@ -73,7 +73,7 @@
         app:layout_constraintVertical_bias="0.446" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/chooseACityButton"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginTop="10dp"

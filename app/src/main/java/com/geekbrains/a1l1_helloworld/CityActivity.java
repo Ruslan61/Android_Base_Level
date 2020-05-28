@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CityActivity extends AppCompatActivity {
+public class CityActivity extends AppCompatActivity implements Constants{
 
     private Button select;
     private EditText inputCity;
@@ -27,16 +27,16 @@ public class CityActivity extends AppCompatActivity {
         initViews();
         setContentView(R.layout.activity_city);
 
-//        Button selectCity = findViewById(R.id.select);
-//        selectCity.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                EditText txtInputCity = CityActivity.this.findViewById(R.id.inputCity);
-//                Intent intent = new Intent(CityActivity.this, MainActivity.class);
-//                intent.putExtra(TEXT, txtInputCity.getText().toString());
-//                startActivity(intent);
-//            }
-//        });
+        Button selectCity = findViewById(R.id.select);
+        selectCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText txtInputCity = CityActivity.this.findViewById(R.id.inputCity);
+                Intent intent = new Intent(CityActivity.this, MainActivity.class);
+                intent.putExtra(TEXT, txtInputCity.getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
@@ -48,8 +48,4 @@ public class CityActivity extends AppCompatActivity {
         stavropol = findViewById(R.id.textViewStavropol);
         vladivostok = findViewById(R.id.textViewVladivostok);
     }
-
-//    public interface Constants {
-//        String TEXT = "TEXT";
-//    }
 }

@@ -11,4 +11,5 @@
     <string name="pressure">Pressure</string>
     <string name="changed_city">Changed city</string>
     <string name="choose_a_city_btn">choose a city</string>
+    <string name="cityHint">City</string>
 </resources>

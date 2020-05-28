@@ -16,12 +16,13 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Constants{
 
     private static final String TAG = "myLogs";
     private Button chooseACity;
     private TextView textTemperature;
     private final String actualTemperatureKey = "actualTemperatureKey";
+    private TextView changedCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         setOnOpenCityActivity();
 
+        String text = Objects.requireNonNull(getIntent().getExtras()).getString(TEXT);
+        TextView textView = findViewById(R.id.changedCity);
+        textView.setText(text);
 
     }
-
 
     private void setOnOpenCityActivity() {
         chooseACity.setOnClickListener(new View.OnClickListener() {
@@ -73,5 +76,6 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         chooseACity = findViewById(R.id.chooseACityButton);
         textTemperature = findViewById(R.id.actualTemperature);
+        changedCity = findViewById(R.id.changedCity);
     }
 }
