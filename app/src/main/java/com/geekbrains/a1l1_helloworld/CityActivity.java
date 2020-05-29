@@ -2,6 +2,7 @@ package com.geekbrains.a1l1_helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CityActivity extends AppCompatActivity implements Constants{
+public class CityActivity extends AppCompatActivity {
+    //
+    public final static String cityActivityDataKey = "cityActivityDataKey";
 
     private Button select;
     private EditText inputCity;
@@ -26,18 +29,21 @@ public class CityActivity extends AppCompatActivity implements Constants{
         super.onCreate(savedInstanceState);
         initViews();
         setContentView(R.layout.activity_city);
+        setOnClickListenerForSelectBtn();
+    }
 
-        Button selectCity = findViewById(R.id.select);
-        selectCity.setOnClickListener(new View.OnClickListener() {
+    private void setOnClickListenerForSelectBtn() {
+        findViewById(R.id.select).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText txtInputCity = CityActivity.this.findViewById(R.id.inputCity);
-                Intent intent = new Intent(CityActivity.this, MainActivity.class);
-                intent.putExtra(TEXT, txtInputCity.getText().toString());
-                startActivity(intent);
+                Intent intent = new Intent();
+                intent.putExtra(cityActivityDataKey, (Parcelable) inputCity);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
     }
+
 
     private void initViews() {
         select = findViewById(R.id.select);

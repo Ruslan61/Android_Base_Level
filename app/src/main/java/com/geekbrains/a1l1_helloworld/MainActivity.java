@@ -1,6 +1,7 @@
 package com.geekbrains.a1l1_helloworld;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,13 +17,14 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements Constants{
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "myLogs";
     private Button chooseACity;
     private TextView textTemperature;
     private final String actualTemperatureKey = "actualTemperatureKey";
     private TextView changedCity;
+    private int requestCodeToOpenCityActivity = 11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +32,24 @@ public class MainActivity extends AppCompatActivity implements Constants{
         setContentView(R.layout.activity_main);
         initViews();
         setOnOpenCityActivity();
-
-        String text = Objects.requireNonNull(getIntent().getExtras()).getString(TEXT);
-        TextView textView = findViewById(R.id.changedCity);
-        textView.setText(text);
-
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == requestCodeToOpenCityActivity) {
+            EditText text = findViewById(R.id.inputCity);
+            changedCity.setText((CharSequence) text);
+        }
+    }
+    //  inputCity.setText(findViewById(R.id.textViewMoscow).toString());
 
     private void setOnOpenCityActivity() {
         chooseACity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CityActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 11);
             }
         });
     }
@@ -78,4 +85,6 @@ public class MainActivity extends AppCompatActivity implements Constants{
         textTemperature = findViewById(R.id.actualTemperature);
         changedCity = findViewById(R.id.changedCity);
     }
+
+
 }
