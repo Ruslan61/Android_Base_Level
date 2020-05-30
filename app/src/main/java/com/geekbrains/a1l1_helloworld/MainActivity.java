@@ -38,11 +38,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == requestCodeToOpenCityActivity) {
-            EditText text = findViewById(R.id.inputCity);
-            changedCity.setText((CharSequence) text);
+            changedCity.setText(data.getExtras().getString(CityActivity.cityActivityDataKey));
         }
     }
-    //  inputCity.setText(findViewById(R.id.textViewMoscow).toString());
 
     private void setOnOpenCityActivity() {
         chooseACity.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +83,4 @@ public class MainActivity extends AppCompatActivity {
         textTemperature = findViewById(R.id.actualTemperature);
         changedCity = findViewById(R.id.changedCity);
     }
-
-
 }

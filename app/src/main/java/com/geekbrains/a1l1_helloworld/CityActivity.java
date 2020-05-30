@@ -12,8 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CityActivity extends AppCompatActivity {
-    //
+public class CityActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String cityActivityDataKey = "cityActivityDataKey";
 
     private Button select;
@@ -27,9 +26,15 @@ public class CityActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initViews();
         setContentView(R.layout.activity_city);
+        initViews();
         setOnClickListenerForSelectBtn();
+
+        moscow.setOnClickListener(CityActivity.this);
+        st_petersburg.setOnClickListener(CityActivity.this);
+        rostov_na_donu.setOnClickListener(CityActivity.this);
+        stavropol.setOnClickListener(CityActivity.this);
+        vladivostok.setOnClickListener(CityActivity.this);
     }
 
     private void setOnClickListenerForSelectBtn() {
@@ -37,13 +42,33 @@ public class CityActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra(cityActivityDataKey, (Parcelable) inputCity);
+                intent.putExtra(cityActivityDataKey, inputCity.getText().toString());
                 setResult(RESULT_OK, intent);
                 finish();
             }
         });
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.textViewMoscow:
+                inputCity.setText(R.string.city_moscow);
+                break;
+            case R.id.textViewPeter:
+                inputCity.setText(R.string.city_st_petersburg);
+                break;
+            case R.id.textViewRostov:
+                inputCity.setText(R.string.city_rostov_na_donu);
+                break;
+            case R.id.textViewStavropol:
+                inputCity.setText(R.string.city_stavropol);
+                break;
+            case R.id.textViewVladivostok:
+                inputCity.setText(R.string.city_vladivostok);
+                break;
+        }
+    }
 
     private void initViews() {
         select = findViewById(R.id.select);
