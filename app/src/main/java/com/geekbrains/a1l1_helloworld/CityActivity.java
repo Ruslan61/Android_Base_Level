@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CityActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String cityActivityDataKey = "cityActivityDataKey";
-
     private Button select;
     private EditText inputCity;
     private TextView moscow;
