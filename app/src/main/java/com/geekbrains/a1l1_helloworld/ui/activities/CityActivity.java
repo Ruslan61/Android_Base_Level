@@ -1,23 +1,20 @@
-package com.geekbrains.a1l1_helloworld;
+package com.geekbrains.a1l1_helloworld.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.geekbrains.a1l1_helloworld.R;
 
 public class CityActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String cityActivityDataKey = "cityActivityDataKey";
-
-    private Button select;
     private EditText inputCity;
     private TextView moscow;
-    private TextView st_petersburg;
-    private TextView rostov_na_donu;
+    private TextView stPetersburg;
+    private TextView rostovNaDonu;
     private TextView stavropol;
     private TextView vladivostok;
 
@@ -27,15 +24,15 @@ public class CityActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_city);
         initViews();
         setOnClickListenerForSelectBtn();
-
-        moscow.setOnClickListener(CityActivity.this);
-        st_petersburg.setOnClickListener(CityActivity.this);
-        rostov_na_donu.setOnClickListener(CityActivity.this);
-        stavropol.setOnClickListener(CityActivity.this);
-        vladivostok.setOnClickListener(CityActivity.this);
     }
 
     private void setOnClickListenerForSelectBtn() {
+        moscow.setOnClickListener(CityActivity.this);
+        stPetersburg.setOnClickListener(CityActivity.this);
+        rostovNaDonu.setOnClickListener(CityActivity.this);
+        stavropol.setOnClickListener(CityActivity.this);
+        vladivostok.setOnClickListener(CityActivity.this);
+
         findViewById(R.id.select).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,11 +66,10 @@ public class CityActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initViews() {
-        select = findViewById(R.id.select);
         inputCity = findViewById(R.id.inputCity);
         moscow = findViewById(R.id.textViewMoscow);
-        st_petersburg = findViewById(R.id.textViewPeter);
-        rostov_na_donu = findViewById(R.id.textViewRostov);
+        stPetersburg = findViewById(R.id.textViewPeter);
+        rostovNaDonu = findViewById(R.id.textViewRostov);
         stavropol = findViewById(R.id.textViewStavropol);
         vladivostok = findViewById(R.id.textViewVladivostok);
     }
