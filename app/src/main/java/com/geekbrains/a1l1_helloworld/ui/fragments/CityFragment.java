@@ -12,7 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.geekbrains.a1l1_helloworld.R;
-import com.geekbrains.a1l1_helloworld.ui.activities.MainActivity;
+import com.geekbrains.a1l1_helloworld.event_bus.EventBus;
+import com.geekbrains.a1l1_helloworld.event_bus.events.ReplaceFragmentEvent;
 
 public class CityFragment extends Fragment implements View.OnClickListener {
     boolean isExistWeatherFragment;
@@ -54,9 +55,7 @@ public class CityFragment extends Fragment implements View.OnClickListener {
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getActivity() instanceof MainActivity) {
-                    ((MainActivity) getActivity()).replaceToWeatherFragment();
-                }
+                EventBus.getBus().post(new ReplaceFragmentEvent());
             }
         });
     }

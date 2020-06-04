@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import com.geekbrains.a1l1_helloworld.R;
+import com.geekbrains.a1l1_helloworld.event_bus.EventBus;
+import com.geekbrains.a1l1_helloworld.event_bus.events.ReplaceFragmentEvent;
 import com.geekbrains.a1l1_helloworld.ui.fragments.CityFragment;
 import com.geekbrains.a1l1_helloworld.ui.fragments.WeatherFragment;
+import com.squareup.otto.Subscribe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,13 +32,20 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    @Subscribe
+    public void onReplaceFragmentEvent(ReplaceFragmentEvent event) {
+        replaceToWeatherFragment();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
+        EventBus.getBus().register(this);
     }
 
     @Override
     protected void onStop() {
+        EventBus.getBus().unregister(this);
         super.onStop();
     }
 }
