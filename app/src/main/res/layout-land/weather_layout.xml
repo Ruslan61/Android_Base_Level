@@ -18,7 +18,6 @@
         android:id="@+id/chooseACityButton"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:visibility="invisible"
         android:layout_gravity="center"
         android:text="@string/choose_a_city_btn"
         android:textSize="14sp" />
