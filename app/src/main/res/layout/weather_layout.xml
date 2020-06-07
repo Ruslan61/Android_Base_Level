@@ -7,13 +7,13 @@
     android:background="#3BDFA6">
 
     <TextView
-        android:id="@+id/changedCity"
+        android:id="@+id/displayedCity"
         android:layout_width="188dp"
         android:layout_height="49dp"
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:text="@string/changed_city" />
+        android:text="@string/city_rostov_na_donu" />
 
     <Button
         android:id="@+id/chooseACityButton"

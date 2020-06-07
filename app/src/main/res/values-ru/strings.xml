@@ -10,7 +10,6 @@
     <string name="city_vladivostok">Владивосток</string>
     <string name="wind_speed">Скорость ветра</string>
     <string name="pressure">Давление</string>
-    <string name="changed_city">Выбранный город</string>
     <string name="choose_a_city_btn">выбрать город</string>
     <string name="cityHint">Город</string>
 </resources>

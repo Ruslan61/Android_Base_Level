@@ -76,6 +76,6 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         chooseACity = findViewById(R.id.chooseACityButton);
         textTemperature = findViewById(R.id.actualTemperature);
-        changedCity = findViewById(R.id.changedCity);
+        changedCity = findViewById(R.id.displayedCity);
     }
 }
