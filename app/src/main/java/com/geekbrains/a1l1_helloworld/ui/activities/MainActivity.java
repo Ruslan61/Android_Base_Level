@@ -3,9 +3,6 @@ package com.geekbrains.a1l1_helloworld.ui.activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,20 +11,16 @@ import android.widget.TextView;
 import com.geekbrains.a1l1_helloworld.R;
 
 public class MainActivity extends AppCompatActivity {
-
     private Button chooseACity;
     private TextView displayedCity;
     private final String actualDisplayedCity = "actualDisplayedCity";
-    private RecyclerView recyclerView;
-    private String[] listData = new String[] {"Samara", "Novgorod", "Omsk",
-            "Arkhangelsk", "Novosibirsk"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_layout);
         initViews();
-        setupRecyclerView();
         setOnOpenCityActivity();
     }
 
@@ -41,13 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    private void setupRecyclerView() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
-        RecyclerDataAdapter adapter = new RecyclerDataAdapter(listData);
 
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -86,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         chooseACity = findViewById(R.id.chooseACityButton);
         displayedCity = findViewById(R.id.displayedCity);
-        recyclerView = findViewById(R.id.recyclerView);
     }
 }
