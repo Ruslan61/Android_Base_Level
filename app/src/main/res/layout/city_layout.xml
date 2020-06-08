@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="#3BDFA6"
     android:orientation="vertical">
 
@@ -23,6 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"/>
 
     <TextView
         android:id="@+id/textViewMoscow"

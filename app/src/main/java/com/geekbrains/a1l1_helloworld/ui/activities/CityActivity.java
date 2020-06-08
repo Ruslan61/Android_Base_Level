@@ -3,18 +3,15 @@ package com.geekbrains.a1l1_helloworld.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.geekbrains.a1l1_helloworld.R;
+
 
 public class CityActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String cityActivityDataKey = "cityActivityDataKey";
-    private Button select;
     private EditText inputCity;
     private TextView moscow;
     private TextView st_petersburg;
@@ -70,7 +67,6 @@ public class CityActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initViews() {
-        select = findViewById(R.id.select);
         inputCity = findViewById(R.id.inputCity);
         moscow = findViewById(R.id.textViewMoscow);
         st_petersburg = findViewById(R.id.textViewPeter);
