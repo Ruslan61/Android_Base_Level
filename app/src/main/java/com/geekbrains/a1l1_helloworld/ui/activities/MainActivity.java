@@ -3,6 +3,9 @@ package com.geekbrains.a1l1_helloworld.ui.activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private Button chooseACity;
     private TextView displayedCity;
     private final String actualDisplayedCity = "actualDisplayedCity";
+    private RecyclerView recyclerViewWeather;
+    private String[] temperatureList = new String[] {"23", "12", "22", "33", "17",
+            "14","31", "18", "22", "26"};
 
 
     @Override
@@ -21,7 +27,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_layout);
         initViews();
+        setupRecyclerView();
         setOnOpenCityActivity();
+    }
+
+    private void setupRecyclerView() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
+        RecyclerDataAdapter adapter = new RecyclerDataAdapter(temperatureList);
+
+        recyclerViewWeather.setLayoutManager(layoutManager);
+        recyclerViewWeather.setAdapter(adapter);
     }
 
     @Override
@@ -71,5 +86,6 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         chooseACity = findViewById(R.id.chooseACityButton);
         displayedCity = findViewById(R.id.displayedCity);
+        recyclerViewWeather = findViewById(R.id.recyclerViewWeather);
     }
 }

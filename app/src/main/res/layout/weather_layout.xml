@@ -10,7 +10,6 @@
         android:id="@+id/displayedCity"
         android:layout_width="188dp"
         android:layout_height="49dp"
-        android:layout_marginTop="60dp"
         android:gravity="center"
         android:layout_gravity="center"
         android:text="@string/city_rostov_na_donu" />
@@ -60,4 +59,9 @@
         android:layout_gravity="center"
         android:inputType="number"
         android:text="25" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewWeather"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
 </LinearLayout>
