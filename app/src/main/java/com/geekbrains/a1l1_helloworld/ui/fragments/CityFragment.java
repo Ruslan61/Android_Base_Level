@@ -12,8 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.geekbrains.a1l1_helloworld.R;
-import com.geekbrains.a1l1_helloworld.event_bus.EventBus;
-import com.geekbrains.a1l1_helloworld.event_bus.events.ReplaceFragmentEvent;
+import com.geekbrains.a1l1_helloworld.ui.activities.MainActivity;
 
 public class CityFragment extends Fragment implements View.OnClickListener {
     boolean isExistWeatherFragment;
@@ -24,12 +23,14 @@ public class CityFragment extends Fragment implements View.OnClickListener {
     private TextView rostovNaDonu;
     private TextView stavropol;
     private TextView vladivostok;
+    public final static String cityBundleKey = "cityBundleKey";
+    public final static String cityRequestKey = "cityRequestKey";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_city_layout, container, false);
+        return inflater.inflate(R.layout.city_layout, container, false);
     }
 
     @Override
@@ -55,7 +56,13 @@ public class CityFragment extends Fragment implements View.OnClickListener {
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getBus().post(new ReplaceFragmentEvent());
+                Bundle result = new Bundle();
+                result.putString(cityBundleKey, inputCity.getText().toString());
+                getParentFragmentManager().setFragmentResult(cityRequestKey, result);
+
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).replaceToWeatherFragment();
+                }
             }
         });
     }
