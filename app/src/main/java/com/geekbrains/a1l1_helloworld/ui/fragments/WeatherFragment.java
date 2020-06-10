@@ -43,11 +43,7 @@ public class WeatherFragment extends Fragment {
                     @Override
                     public void onFragmentResult(@NonNull String requestKey,
                                                  @NonNull Bundle result) {
-                        // не работает.
-//                        changedCity = bundle.getString(CityFragment.cityBundleKey);
-
-//                        String result = bundle.getString("bundleKey");
-                        // строка из документации.
+                        changedCity.setText(result.getString(CityFragment.cityBundleKey));
                     }
                 });
     }
