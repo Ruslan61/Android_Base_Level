@@ -5,18 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.geekbrains.a1l1_helloworld.R;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
 
 public class CityActivity extends AppCompatActivity {
     public final static String cityActivityDataKey = "cityActivityDataKey";
-    private EditText inputCity;
     private RecyclerView recyclerView;
+    private TextInputEditText inputCity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +28,16 @@ public class CityActivity extends AppCompatActivity {
         initViews();
         setupRecyclerView();
         setOnClickListenerForSelectBtn();
+    }
+
+    private void checkCityField() {
+        inputCity.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) return;
+                TextView tv = (TextView) v;
+            }
+        });
     }
 
     private void setupRecyclerView() {
@@ -36,6 +49,8 @@ public class CityActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
+
+
 
     private void setOnClickListenerForSelectBtn() {
         findViewById(R.id.select).setOnClickListener(new View.OnClickListener() {
