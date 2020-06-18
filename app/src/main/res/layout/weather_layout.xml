@@ -1,49 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/actualDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:ems="10"
-        android:gravity="center"
-        android:layout_gravity="center"
+        style="@style/DataAndTime"
         android:text="10.10.20" />
 
     <TextView
         android:id="@+id/actualTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:ems="10"
-        android:gravity="center"
-        android:layout_gravity="center"
+        style="@style/DataAndTime"
         android:text="10:10" />
 
     <TextView
         android:id="@+id/displayedCity"
         android:layout_width="188dp"
         android:layout_height="49dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:text="@string/city_rostov_na_donu" />
+        android:gravity="center"
+        android:text="@string/city_rostov_na_donu"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/chooseACityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:text="@string/choose_a_city_btn"
-        android:textSize="14sp" />
+        style="@style/ButtonStyle"
+        android:text="@string/choose_a_city_btn" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -51,6 +35,7 @@
         android:layout_gravity="center">
 
         <TableRow>
+
             <ImageView
                 android:id="@+id/imageSun"
                 android:layout_width="164dp"
@@ -63,11 +48,11 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:textSize="26sp"
-                android:textStyle="bold"
                 android:ems="10"
                 android:gravity="center"
-                android:text="25" />
+                android:text="25"
+                android:textSize="26sp"
+                android:textStyle="bold" />
         </TableRow>
     </TableLayout>
 

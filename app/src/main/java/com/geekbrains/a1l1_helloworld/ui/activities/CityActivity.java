@@ -3,18 +3,15 @@ package com.geekbrains.a1l1_helloworld.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.geekbrains.a1l1_helloworld.R;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Objects;
 
 public class CityActivity extends AppCompatActivity {
     public final static String cityActivityDataKey = "cityActivityDataKey";
@@ -49,7 +46,6 @@ public class CityActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
-
 
 
     private void setOnClickListenerForSelectBtn() {
