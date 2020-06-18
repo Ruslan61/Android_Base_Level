@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>Samara</item>
+        <item>Novgorod</item>
+        <item>Omsk</item>
+        <item>Arkhangelsk</item>
+        <item>Novosibirsk</item>
+        <item>Moscow</item>
+        <item>St.Petersburg</item>
+        <item>Rostov-na-Donu</item>
+        <item>Stavropol</item>
+        <item>Vladivostok</item>
+    </string-array>
+
+    <string-array name="temperature">
+        <item>23</item>
+        <item>16</item>
+        <item>18</item>
+        <item>29</item>
+        <item>27</item>
+        <item>21</item>
+        <item>14</item>
+        <item>17</item>
+        <item>22</item>
+        <item>19</item>
+    </string-array>
+</resources>

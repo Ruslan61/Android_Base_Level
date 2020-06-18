@@ -3,6 +3,7 @@ package com.geekbrains.a1l1_helloworld.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,13 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.geekbrains.a1l1_helloworld.R;
 
+import java.util.Objects;
+
 public class CityActivity extends AppCompatActivity {
     public final static String cityActivityDataKey = "cityActivityDataKey";
     private EditText inputCity;
     private RecyclerView recyclerView;
-    private String[] cityList = new String[] {"Samara", "Novgorod", "Omsk",
-            "Arkhangelsk", "Novosibirsk", "Moscow",
-            "St.Petersburg", "Rostov-na-Donu", "Stavropol", "Vladivostok"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class CityActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView() {
+        String[] cityList = getResources().getStringArray(R.array.cities);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
         RecyclerDataAdapter adapter = new RecyclerDataAdapter(cityList);
 

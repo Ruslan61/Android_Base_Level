@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView displayedCity;
     private final String actualDisplayedCity = "actualDisplayedCity";
     private RecyclerView recyclerViewWeather;
-    private String[] temperatureList = new String[] {"23", "12", "22", "33", "17",
-            "14","31", "18", "22", "26"};
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView() {
+        String[] temperatureList = getResources().getStringArray(R.array.temperature);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
         RecyclerDataAdapter adapter = new RecyclerDataAdapter(temperatureList);
 
