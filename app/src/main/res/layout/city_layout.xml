@@ -19,10 +19,25 @@
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/select"
-        style="@style/ButtonStyle"
-        android:text="@string/button" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TableRow android:gravity="center">
+
+            <Button
+                android:id="@+id/select"
+                style="@style/ButtonStyle"
+                android:text="@string/button" />
+
+            <ImageView
+                android:id="@+id/outline_white"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/outline_white" />
+        </TableRow>
+    </TableLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
