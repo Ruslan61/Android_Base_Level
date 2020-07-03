@@ -47,12 +47,12 @@
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginStart="100dp"
             android:ems="10"
             android:gravity="center"
             android:text="25"
             android:textSize="26sp"
-            android:textStyle="bold"
-            android:layout_marginStart="100dp"/>
+            android:textStyle="bold" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
