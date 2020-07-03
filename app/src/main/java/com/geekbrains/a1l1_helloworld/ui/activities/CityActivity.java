@@ -67,7 +67,7 @@ public class CityActivity extends AppCompatActivity {
         findViewById(R.id.outline_white).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(v, "", Snackbar.LENGTH_LONG)
+                Snackbar.make(v, "Snackbar", Snackbar.LENGTH_LONG)
                         .setAction("Action", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

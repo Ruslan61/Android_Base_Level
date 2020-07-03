@@ -29,32 +29,31 @@
         style="@style/ButtonStyle"
         android:text="@string/choose_a_city_btn" />
 
-    <TableLayout
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-        <TableRow>
+        <ImageView
+            android:id="@+id/imageSun"
+            android:layout_width="164dp"
+            android:layout_height="121dp"
+            android:layout_gravity="center"
+            android:src="@drawable/sun_1" />
 
-            <ImageView
-                android:id="@+id/imageSun"
-                android:layout_width="164dp"
-                android:layout_height="121dp"
-                android:layout_gravity="center"
-                android:src="@drawable/sun_1" />
-
-            <TextView
-                android:id="@+id/actualTemperature"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:ems="10"
-                android:gravity="center"
-                android:text="25"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
+        <TextView
+            android:id="@+id/actualTemperature"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:gravity="center"
+            android:text="25"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginStart="100dp"/>
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewWeather"
