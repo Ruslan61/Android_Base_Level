@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello_first_lesson">Привет, это первый урок на GeekBrains!</string>
-    <string name="hello_world">Привет мир!</string>
-    <string name="button">Кнопка</string>
-    <string name="switch_text">Переключатель</string>
-    <string name="name">Имя</string>
+
+    <string name="city">Ваш город</string>
+    <string name="button">Выбрать</string>
+    <string name="city_moscow">Москва</string>
+    <string name="city_st_petersburg">Санкт-Петербург</string>
+    <string name="city_rostov_na_donu">Ростов-на-Дону</string>
+    <string name="city_stavropol">Ставрополь</string>
+    <string name="city_vladivostok">Владивосток</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="pressure">Давление</string>
+    <string name="choose_a_city_btn">выбрать город</string>
+    <string name="cityHint">Город</string>
+
+    <string name="change_city">Change city</string>
+    <string name="place_not_found">Place not found</string>
+    <string name="weather_clear_night">&#xf02e;</string>
+    <string name="weather_foggy">&#xf014;</string>
+    <string name="weather_cloudy">&#xf013;</string>
+    <string name="weather_rainy">&#xf019;</string>
+    <string name="weather_snowy">&#xf01b;</string>
+    <string name="weather_thunder">&#xf01e;</string>
+    <string name="weather_drizzle">&#xf01c;</string>
 </resources>
