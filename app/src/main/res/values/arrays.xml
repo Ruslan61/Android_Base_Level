@@ -12,17 +12,4 @@
         <item>Stavropol</item>
         <item>Vladivostok</item>
     </string-array>
-
-    <string-array name="temperature">
-        <item>23</item>
-        <item>16</item>
-        <item>18</item>
-        <item>29</item>
-        <item>27</item>
-        <item>21</item>
-        <item>14</item>
-        <item>17</item>
-        <item>22</item>
-        <item>19</item>
-    </string-array>
 </resources>
